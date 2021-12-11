@@ -8,9 +8,8 @@ on:
     branches:
       - master
 jobs:
-  #Test's job
   build:
-    name: Build
+    name: CI Flow
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -32,9 +31,9 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Run Unit Tests
+      - name: Build and Run Unit Tests
         run: mvn -B test
-      - name: Build and sonar analyze
+      - name: Sonar and Code Coverage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
