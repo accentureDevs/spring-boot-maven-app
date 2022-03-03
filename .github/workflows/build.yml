@@ -38,4 +38,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=accentureDevs_spring-boot-maven-app -Dsonar.coverage.jacoco.xmlReportPaths=report1.xml,report2.xml sonar:sonar
-        
+      - name: Deploy to Heroku DEV
+        uses: AkhileshNS/heroku-deploy@3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_email: ${{secrects.HEROKU_EMAIL}}
+          heroku_app_name: ${{secrets.HEROKU_APP}}
