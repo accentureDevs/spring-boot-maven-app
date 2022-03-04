@@ -18,7 +18,7 @@ public class DataController {
         }
         
         @GetMapping("/greet")
-        public String healthCheck() {
+        public String greet() {
                 return "From Greet Controller";
         }
 
