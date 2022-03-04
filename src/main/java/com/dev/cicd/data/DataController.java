@@ -16,6 +16,11 @@ public class DataController {
         public String healthCheck() {
                 return "Spring Boot App Running Successfully";
         }
+        
+        @GetMapping("/greet")
+        public String healthCheck() {
+                return "From Greet Controller";
+        }
 
         @GetMapping("/version")
         public String version() {
@@ -50,5 +55,7 @@ public class DataController {
                 return currencies;
 
         }
+        
+        
 
 }
