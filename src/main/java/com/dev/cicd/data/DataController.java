@@ -14,7 +14,7 @@ public class DataController {
 
         @GetMapping("/")
         public String healthCheck() {
-                return "Spring Boot App Running Successfully";
+                return "Spring Boot App Running Successfully Modified";
         }
         
         @GetMapping("/greet")
