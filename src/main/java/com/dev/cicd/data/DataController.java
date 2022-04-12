@@ -19,7 +19,7 @@ public class DataController {
         
         @GetMapping("/greet")
         public String greet() {
-                return "From Greet Controller";
+                return "Hello Greet Controller";
         }
 
         @GetMapping("/version")
